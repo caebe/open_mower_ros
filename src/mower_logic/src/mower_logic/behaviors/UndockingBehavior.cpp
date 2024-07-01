@@ -48,6 +48,7 @@ Behavior *UndockingBehavior::execute() {
 
     nav_msgs::Path path;
 
+    ros::Duration(config.wait_before_undocking).sleep();
 
     int undock_point_count = config.undock_distance * 10.0;
     for (int i = 0; i < undock_point_count; i++) {
